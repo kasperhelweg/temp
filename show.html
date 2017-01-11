@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+        <style>
+         @font-face{font-family:franklin-gothic-urw;src:url(https://use.typekit.net/af/9e8406/0000000000000000000118ad/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff2"),url(https://use.typekit.net/af/9e8406/0000000000000000000118ad/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff"),url(https://use.typekit.net/af/9e8406/0000000000000000000118ad/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("opentype");font-weight:400;font-style:normal;}
+         @font-face{font-family:franklin-gothic-urw;src:url(https://use.typekit.net/af/48676d/000000000000000000011ce6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff2"),url(https://use.typekit.net/af/48676d/000000000000000000011ce6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff"),url(https://use.typekit.net/af/48676d/000000000000000000011ce6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("opentype");font-weight:500;font-style:normal;}
+         @font-face{font-family:franklin-gothic-urw;src:url(https://use.typekit.net/af/194ca9/0000000000000000000118b1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff2"),url(https://use.typekit.net/af/194ca9/0000000000000000000118b1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff"),url(https://use.typekit.net/af/194ca9/0000000000000000000118b1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("opentype");font-weight:700;font-style:normal;}
+         @font-face{font-family:franklin-gothic-urw;src:url(https://use.typekit.net/af/f7443b/0000000000000000000118b0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff2"),url(https://use.typekit.net/af/f7443b/0000000000000000000118b0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("woff"),url(https://use.typekit.net/af/f7443b/0000000000000000000118b0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&token=3BGEBlpb472AI3zXJiE9MKCx6uN%2FXtcSZsynZhT4iWOi078bFd5m9JVz%2BQBH3FvcfA75YA4H6BKWv%2Bqzbl%2BKfv4i33p68oEmSj7oS%2FhiWsD2SHCppt5BF4IHVz%2Faj3hu) format("opentype");font-weight:500;font-style:italic;}
+
+         body {
+             font-family: 'franklin-gothic-urw';
+             font-style: normal;
+             font-weight: 400;
+         }
+         .container {
+             max-width: 100%;
+             margin-left: auto;
+             margin-right: auto;
+         }
+         .container:after {
+             content: " ";
+             display: block;
+             clear: both;
+         }
+
+         .list {
+             clear: both;
+             margin: 0;
+             padding: 0;
+             list-style-type: none;
+         }
+
+         .seperator {
+             width: 100%;
+             float: left;
+             margin-left: 0;
+             margin-right: 0;
+             margin-top: 25px;
+             margin-bottom: 15px;
+         }
+         .seperator hr {
+             border: 0;
+             height: 1px;
+             background: #333;
+         }
+         .seperator--small-sep {
+             width: 32.20339%;
+             float: left;
+             margin-right: 1.69492%;
+         }
+         .seperator--large-sep {
+             width: 66.10169%;
+             float: right;
+             margin-right: 0;
+         }
+         .cv-header {
+             text-align: center;
+             text-transform: uppercase;
+             margin-bottom: 70px;
+             padding: 0;
+         }
+         .cv-header__name {
+             font-weight: 700;
+             margin: 0;
+             padding: 0;
+         }
+         .cv-header__title {
+             font-weight: 400;
+             margin: 0;
+             padding: 0;
+         }
+         .education {
+             text-align: center;
+         }
+         .education__header {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+         .education__civil-study {
+             width: 49.15254%;
+             float: left;
+             margin-right: 1.69492%;
+         }
+         .education__civil-study__study {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+         .education__military-study {
+             width: 49.15254%;
+             float: right;
+             margin-right: 0;
+         }
+         .education__military-study__study {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+
+         .competences {
+             width: 32.20339%;
+             float: left;
+             margin-right: 1.69492%;
+             text-align: center;
+         }
+         .competences__header {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+
+         .experience {
+             width: 32.20339%;
+             float: left;
+             margin-right: 1.69492%;
+             text-align: center;
+         }
+         .experience__header {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+
+         .courses {
+             width: 32.20339%;
+             float: right;
+             margin-right: 0;
+             text-align: center;
+         }
+         .courses__header {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+
+         .career {
+             width: 100%;
+             float: left;
+             margin-left: 0;
+             margin-right: 0;
+         }
+         .career__career-job-column {
+             width: 32.20339%;
+             float: left;
+             margin-right: 1.69492%;
+         }
+         .career__career-job-column--last {
+             width: 32.20339%;
+             float: right;
+             margin-right: 0;
+         }
+
+         .career-job-column__header {
+             text-transform: uppercase;
+         }
+         .career-job-column__sub-header {
+             font-weight: 700;
+             text-transform: uppercase;
+         }
+
+         .footer {
+             clear: both;
+             text-align: center;
+         }
+
+        </style>
+    </head>
+
+    <body>
+        <div class='container'>
+            <header class='cv-header'>
+                <h1 class='cv-header__name'>
+                    kasper helweg jonassen
+                </h1>
+                <h2 class='cv-header__title'>
+                    cv i forsvaret
+                </h2>
+            </header>
+
+            <div class="education">
+                <header class="education__header">
+                    uddannelser
+                </header>
+
+                <div class="education__civil-study">
+                    <h3 class="education__civil-study__study">ba i informationsvidenskab</h3>
+                    <p class="education__civil-study__university">KBH Universitet 2014-2017</p>
+                </div>
+
+                <div class="education__military-study">
+                    <h3 class="education__military-study__study">teknik officer i flyvevåbnet</h3>
+                    <p class="education__military-study__university">Forsvaret 2018-2020</p>
+                </div>
+            </div>
+
+            <div class="seperator">
+                <div class="seperator--full-sep">
+                    <hr>
+                </div>
+            </div>
+
+            <div class="competences">
+                <h3 class="competences__header">kompetencer</h3>
+                <ul class="list competences__list">
+                    <li class="list__item">Lang fysisk og mental udholdenhed</li>
+                    <li class="list__item">Handlingsdygtig</li>
+                    <li class="list__item">Godt overblik</li>
+                    <li class="list__item list__item--last">Taktik og ansvar</li>
+                </ul>
+            </div>
+
+            <div class="experience">
+                <h3 class="experience__header">praktisk erfaring</h3>
+                <ul class="list experience__list">
+                    <li class="list__item">Lang fysisk og mental udholdenhed</li>
+                    <li class="list__item">Handlingsdygtig</li>
+                    <li class="list__item">Godt overblik</li>
+                    <li class="list__item list__item--last">Taktik og ansvar</li>
+                </ul>
+            </div>
+
+            <div class="courses">
+                <h3 class="courses__header">kurser</h3>
+                <ul class="list courses__list">
+                    <li class="list__item">Lang fysisk og mental udholdenhed</li>
+                    <li class="list__item">Handlingsdygtig</li>
+                    <li class="list__item">Godt overblik</li>
+                    <li class="list__item list__item--last">Taktik og ansvar</li>
+                </ul>
+            </div>
+
+            <div class="seperator">
+                <div class="seperator--small-sep">
+                    <hr>
+                </div>
+
+                <div class="seperator--large-sep">
+                    <hr>
+                </div>
+            </div>
+            <div class="career">
+
+                <div class="career-job-column career__career-job-column">
+                    <div class="career-job-column__header">dit første job i forsvaret</div>
+                    <div class="career-job-column__sub-header">jobtitel</div>
+                    <div class="career-job-column__copy-header">Technical writing.</div>
+                    <p class="career-job-column__copy">Mauris sit amet sem id dolor iaculis laoreet vitae eget felis. Quisque vitae turpis nec quam lacinia fringilla non a leo. Etiam eu ipsum sit amet mauris placerat vulputate. Integer sit amet orci mi. Proin mollis placerat rutrum.</p>
+                </div>
+
+
+                <div class="career-job-column career__career-job-column">
+                    <div class="career-job-column__header">dit første job i forsvaret</div>
+                    <div class="career-job-column__sub-header">jobtitel</div>
+                    <div class="career-job-column__copy-header">Technical writing.</div>
+                    <p class="career-job-column__copy">Mauris sit amet sem id dolor iaculis laoreet vitae eget felis. Quisque vitae turpis nec quam lacinia fringilla non a leo. Etiam eu ipsum sit amet mauris placerat vulputate. Integer sit amet orci mi. Proin mollis placerat rutrum.</p>
+                </div>
+
+
+                <div class="career-job-column career__career-job-column--last">
+                    <div class="career-job-column__header">&nbsp;</div>
+                    
+                    <div class="career-job-column__sub-header">jobtitel</div>
+                    <div class="career-job-column__copy-header">Technical writing.</div>
+                    <p class="career-job-column__copy">Mauris sit amet sem id dolor iaculis laoreet vitae eget felis. Quisque vitae turpis nec quam lacinia fringilla non a leo. Etiam eu ipsum sit amet mauris placerat vulputate. Integer sit amet orci mi. Proin mollis placerat rutrum.</p>
+                </div>
+
+            </div>
+
+
+            <div class="footer">
+                Mauris nulla risus, accumsan at augue a, efficitur euismod lectus. Aenean non pretium lectus. Vestibulum a ligula eu dolor ultricies auctor sit amet ut libero.
+            </div>
+        </div>
+    </body>
+</html>
+
